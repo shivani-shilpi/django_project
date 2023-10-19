@@ -6,8 +6,8 @@ from django.views import View
 from myapp.models import *
 
 def car(request):
-    # cars = Car.objects.all()
-    return render(request, 'cars/car.html')
+    cars = Car.objects.all()
+    return render(request, 'cars/car.html', {'cars': cars})
 
 def create_car(request):
     if request.method == "POST":
